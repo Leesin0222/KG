@@ -1,6 +1,8 @@
 package com.yongjincompany.kotlingrammer
 
+import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -20,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         animDrawble.setEnterFadeDuration(10)
         animDrawble.setExitFadeDuration(5000)
         animDrawble.start()
+
+        binding.developer.setOnClickListener {
+            val openURL = Intent(Intent.ACTION_VIEW)
+            openURL.data = Uri.parse("https://github.com/Leesin0222")
+            startActivity(openURL)
+        }
 
 
     }
