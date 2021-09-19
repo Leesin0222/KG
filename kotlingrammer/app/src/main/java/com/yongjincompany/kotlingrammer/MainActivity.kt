@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
             openURL.data = Uri.parse("https://github.com/Leesin0222")
             startActivity(openURL)
         }
+        binding.startBtn.setOnClickListener {
+            startActivity(Intent(this, GameActivity::class.java))
+            finish()
+        }
 
 
     }
