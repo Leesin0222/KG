@@ -1,5 +1,6 @@
 package com.yongjincompany.kotlingrammer
 
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.drawable.AnimationDrawable
 import android.net.Uri
@@ -8,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.yongjincompany.kotlingrammer.databinding.ActivityMainBinding
+import java.lang.System.exit
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding:ActivityMainBinding
@@ -38,6 +40,27 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onBackPressed() {
+
+        val kBuilder = AlertDialog.Builder(this)
+        kBuilder.setMessage("정말로 종료하시겠습니까?")
+        kBuilder.setTitle("KotlinGrammer")
+        kBuilder.setPositiveButton("나가기"){
+            Dialog,which->
+            exit()
+        }
+        kBuilder.setNegativeButton("취소"){
+            Dialog,which->
+
+        }
+        val createBuild = kBuilder.create()
+        createBuild.show()
+    }
+
+    private fun exit() {
+        super.onBackPressed()
     }
 
 }
