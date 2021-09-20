@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         val kBuilder = AlertDialog.Builder(this)
         kBuilder.setMessage("정말로 종료하시겠습니까?")
         kBuilder.setTitle("KotlinGrammer")
+        kBuilder.setIcon(R.drawable.kotlin_icon)
         kBuilder.setPositiveButton("나가기"){
             Dialog,which->
             exit()
