@@ -91,7 +91,8 @@
 
     <Button
         android:id="@+id/easteregg"
-        android:layout_width="1dp"
-        android:layout_height="1dp"
-        />
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
