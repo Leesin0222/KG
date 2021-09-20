@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import com.yongjincompany.kotlingrammer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -23,16 +24,20 @@ class MainActivity : AppCompatActivity() {
         animDrawble.setExitFadeDuration(5000)
         animDrawble.start()
 
-        binding.developer.setOnClickListener {
+        binding.developerBtn.setOnClickListener {
             val openURL = Intent(Intent.ACTION_VIEW)
             openURL.data = Uri.parse("https://github.com/Leesin0222")
             startActivity(openURL)
         }
-        binding.startBtn.setOnClickListener {
+       binding.startBtn.setOnClickListener {
             startActivity(Intent(this, GameActivity::class.java))
             finish()
+        }
+        binding.dictionaryBtn.setOnClickListener {
+            startActivity(Intent(this, DictionaryActivity::class.java))
         }
 
 
     }
+
 }
