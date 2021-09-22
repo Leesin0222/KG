@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kotlingrammer">
         <activity
+            android:name=".EastereggtwoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EasterEggActivity"
+            android:exported="true" />
+        <activity
             android:name=".DictionaryActivity"
             android:exported="true" />
         <activity
