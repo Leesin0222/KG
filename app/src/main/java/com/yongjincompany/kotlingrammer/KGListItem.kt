@@ -1,6 +1,7 @@
 package com.yongjincompany.kotlingrammer
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -19,16 +20,18 @@ import com.yongjincompany.kotlingrammer.data.KG
 
 
 @Composable
-fun KGListItem(kg: KG) {
+fun KGListItem(kg: KG, navigateToProfile: (KG) -> Unit) {
     Card(
         modifier = Modifier
-            .padding(horizontal = 0.dp, vertical = 4.dp)
+            .padding(horizontal = 0.dp, vertical = 5.dp)
             .fillMaxWidth(),
         elevation = 2.dp,
         shape = RoundedCornerShape(corner = CornerSize(16.dp))
     )
     {
-        Row {
+        Row(
+            Modifier.clickable { navigateToProfile(kg) }
+        ) {
             KGImage(kg = kg)
             Column(
                 modifier = Modifier

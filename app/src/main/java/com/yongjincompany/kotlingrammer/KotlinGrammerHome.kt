@@ -7,10 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
 import com.yongjincompany.kotlingrammer.data.DataProvider
+import com.yongjincompany.kotlingrammer.data.KG
 
 
 @Composable
-fun KotlinGrammerHomeContent(){
+fun KotlinGrammerHomeContent(navigateToProfile: (KG) -> Unit){
     val kgs = remember { DataProvider.kgList }
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 0.dp)
@@ -18,7 +19,7 @@ fun KotlinGrammerHomeContent(){
         items(
             items = kgs,
             itemContent = {
-                KGListItem(kg = it)
+                KGListItem(kg = it, navigateToProfile)
             }
         )
     }
