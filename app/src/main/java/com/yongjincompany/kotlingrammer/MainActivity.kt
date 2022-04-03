@@ -1,6 +1,5 @@
 package com.yongjincompany.kotlingrammer
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -15,7 +14,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             KotlingrammerTheme {
                 MyApp{
-                    startActivity(Intent(this, ProfileActivity::class.java))
+                    startActivity(ProfileActivity.newIntent(this, it))
                 }
                 }
             }
