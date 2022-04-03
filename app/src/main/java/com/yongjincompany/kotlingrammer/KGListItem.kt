@@ -25,7 +25,6 @@ fun KGListItem(kg: KG) {
             .padding(horizontal = 0.dp, vertical = 4.dp)
             .fillMaxWidth(),
         elevation = 2.dp,
-        backgroundColor = Color.White,
         shape = RoundedCornerShape(corner = CornerSize(16.dp))
     )
     {
